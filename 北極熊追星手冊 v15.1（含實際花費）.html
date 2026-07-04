@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 東北關東：北極熊追星手冊 v15.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0d1f35;
+  --blue: #1a6eb5;
+  --blue-light: #2d8fe8;
+  --ice: #e8f4ff;
+  --ice2: #c5e0f7;
+  --white: #ffffff;
+  --surface: #f0f5fb;
+  --surface2: #e4edf8;
+  --accent: #e07b2a;
+  --accent2: #f0a050;
+  --danger: #d63030;
+  --danger-bg: #fff0f0;
+  --warn: #b87a00;
+  --warn-bg: #fffbea;
+  --green: #1a8a50;
+  --green-bg: #eafaf2;
+  --purple: #6040c0;
+  --purple-bg: #f0ecff;
+  --gray: #6b7a8e;
+  --text: #1a2535;
+  --text2: #4a5a6e;
+  --border: rgba(30,60,100,0.10);
+  --border2: rgba(30,60,100,0.18);
+  --shadow: 0 2px 16px rgba(10,30,60,0.09);
+  --shadow-lg: 0 6px 32px rgba(10,30,60,0.13);
+  --r: 14px;
+  --r-sm: 8px;
+
+  --amber: #c8761a;
+  --amber-light: #e8a040;
+  --amber-pale: #fdf0dc;
+  --paper-warm: #faf8f4;
+  --f-border: rgba(26,18,8,0.10);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body {
+  font-family: 'Noto Sans TC', -apple-system, sans-serif;
+  background: var(--surface);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.hero {
+  background: var(--navy);
+  padding: 28px 20px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute;inset:0;
+  background: radial-gradient(ellipse at 30% 60%, rgba(45,143,232,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 30%, rgba(26,110,181,0.14) 0%, transparent 55%);
+}
+.hero h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  position: relative;
+  margin-bottom: 6px;
+}
+.hero p {
+  font-size: 0.82rem;
+  color: var(--ice2);
+  position: relative;
+}
+
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--navy);
+  padding: 0 12px 10px;
+}
+.nav {
+  display: flex;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 3px;
+  padding: 4px;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-item {
+  flex-shrink: 0;
+  padding: 10px 10px;
+  text-align: center;
+  color: rgba(255,255,255,0.55);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.78rem;
+  border-radius: 7px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-item:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.07); }
+.nav-item.active { background: var(--blue); color: #fff; }
+
+.section { display: none; padding: 16px 14px; max-width: 860px; margin: 0 auto; }
+.section.active { display: block; }
+
+.day-card {
+  background: var(--white);
+  border-radius: var(--r);
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.day-header {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+.day-date {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 3px;
+}
+.day-title { font-size: 1rem; font-weight: 700; color: var(--navy); }
+.day-subtitle { font-size: 0.8rem; color: var(--text2); margin-top: 2px; }
+.bear-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.day-body { padding: 16px 18px; }
+
+.focus-box {
+  background: var(--warn-bg);
+  border: 1px solid rgba(184,122,0,0.2);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  font-size: 0.83rem;
+  color: var(--warn);
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.timeline { padding-left: 8px; }
+.tl-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+  position: relative;
+}
+.tl-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 28px;
+  bottom: -14px;
+  width: 1px;
+  background: var(--border2);
+}
+.tl-time {
+  flex-shrink: 0;
+  width: 54px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--blue);
+  padding-top: 2px;
+  text-align: right;
+}
+.tl-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1.5px var(--blue-light);
+  margin-top: 3px;
+}
+.tl-dot.dot-warn { background: var(--danger); box-shadow: 0 0 0 1.5px var(--danger); }
+.tl-dot.dot-green { background: var(--green); box-shadow: 0 0 0 1.5px var(--green); }
+.tl-dot.dot-drive { background: var(--accent); box-shadow: 0 0 0 1.5px var(--accent2); }
+.tl-content { flex: 1; }
+.tl-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.4;
+}
+.tl-desc { font-size: 0.8rem; color: var(--text2); margin-top: 4px; line-height: 1.5; }
+
+.choice-box {
+  background: var(--surface);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  border-left: 3px solid var(--accent);
+}
+.choice-title { font-weight: 700; color: var(--accent); font-size: 0.78rem; margin-bottom: 4px; }
+.choice-or { text-align: center; color: var(--gray); font-size: 0.72rem; margin: 5px 0; font-style: italic; }
+
+.deadline-box {
+  background: var(--danger-bg);
+  border: 1px solid rgba(214,48,48,0.2);
+  border-radius: var(--r-sm);
+  padding: 10px 12px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  border-left: 3px solid var(--danger);
+}
+.deadline-title { font-weight: 700; color: var(--danger); font-size: 0.78rem; margin-bottom: 4px; }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.tag-train  { background: #e2eaf5; color: #1a4a80; }
+.tag-bear   { background: #ddeeff; color: #0e4a8a; }
+.tag-flight { background: var(--navy); color: #fff; }
+.tag-warn   { background: var(--danger-bg); color: var(--danger); border: 1px solid rgba(214,48,48,0.2); }
+.tag-food   { background: #fff0e4; color: #9a4e10; }
+.tag-shop   { background: var(--purple-bg); color: var(--purple); }
+.tag-pass   { background: #e4f8ec; color: #115a2e; }
+.tag-shrine { background: #fce8f3; color: #8a1a5a; }
+.tag-drive  { background: #fff4e0; color: #8a5000; border: 1px solid rgba(200,118,26,0.2); }
+
+.warn-text { color: var(--danger); font-weight: 700; font-size: 0.8rem; background: var(--danger-bg); padding: 6px 10px; border-radius: 6px; margin-top: 6px; display: block; border-left: 3px solid var(--danger); line-height: 1.5; }
+
+.transit-card { background: var(--white); border-radius: var(--r); padding: 18px; margin-bottom: 16px; box-shadow: var(--shadow); }
+.transit-card h3 { font-size: 0.92rem; color: var(--navy); margin-bottom: 12px; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.transit-table { width: 100%; font-size: 0.83rem; border-collapse: collapse; }
+.transit-table td { padding: 8px 4px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.transit-table tr:last-child td { border-bottom: none; }
+.transit-table .t-time { font-family: 'DM Mono', monospace; color: var(--blue); width: 60px; font-weight: 500; }
+.detail-box { background: var(--surface); border-radius: var(--r-sm); padding: 9px 11px; margin-top: 6px; font-size: 0.78rem; color: var(--text2); line-height: 1.6; }
+.logic-label { color: var(--blue); font-weight: 700; display: block; margin-bottom: 3px; font-size: 0.78rem; }
+
+.bear-group { background: var(--white); border-radius: var(--r); padding: 18px; margin-bottom: 14px; box-shadow: var(--shadow); border-left: 5px solid var(--blue); }
+.bear-group.purple { border-left-color: var(--purple); }
+.bear-group.green  { border-left-color: var(--green); }
+.bear-group h3 { font-size: 0.88rem; color: var(--navy); font-weight: 700; margin-bottom: 10px; }
+.bear-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.83rem; }
+.bear-row:last-child { border-bottom: none; padding-bottom: 0; }
+.bear-name { font-weight: 700; color: var(--navy); min-width: 90px; }
+.bear-cn   { color: var(--text2); font-size: 0.78rem; }
+.bear-loc  { margin-left: auto; font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--blue); }
+
+.budget-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-bottom: 14px; }
+.budget-table th { background: var(--navy); color: #fff; padding: 10px 8px; text-align: left; font-size: 0.78rem; font-weight: 700; }
+.budget-table th:not(:first-child) { text-align: right; }
+.budget-table td { padding: 9px 8px; border-bottom: 1px solid var(--border); color: var(--text); }
+.budget-table td:not(:first-child) { text-align: right; font-family: 'DM Mono', monospace; font-size: 0.78rem; }
+.budget-table tr:nth-child(even) td { background: var(--surface); }
+.budget-table tr.sub td { background: var(--surface2); font-weight: 700; color: var(--navy); }
+.budget-table tr.total td { background: var(--warn-bg); font-weight: 700; font-size: 0.9rem; color: var(--warn); border-top: 2px solid var(--accent2); }
+.budget-section { background: var(--white); border-radius: var(--r); padding: 18px; margin-bottom: 16px; box-shadow: var(--shadow); }
+.budget-section h3 { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.exrate { background: var(--ice); border-radius: var(--r-sm); padding: 10px 14px; text-align: center; font-size: 0.82rem; color: var(--blue); font-weight: 700; margin-bottom: 14px; }
+
+.sop-card { background: var(--white); border-radius: var(--r); padding: 18px; margin-bottom: 14px; box-shadow: var(--shadow); }
+.sop-card h3 { font-size: 0.88rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.sop-item { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; align-items: flex-start; }
+.sop-item:last-child { border-bottom: none; padding-bottom: 0; }
+.sop-key { font-weight: 700; color: var(--navy); min-width: 70px; flex-shrink: 0; }
+.sop-val { color: var(--text2); line-height: 1.55; }
+
+/* ══ 美食頁專用樣式 ══ */
+.food-nav-wrap {
+  display: flex; gap: 4px;
+  background: var(--surface2);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.food-nav-wrap::-webkit-scrollbar { display: none; }
+.food-tab {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border-radius: 7px;
+  color: var(--text2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+  border: none; background: none;
+}
+.food-tab.active { background: var(--navy); color: #fff; }
+.food-tab:hover:not(.active) { background: rgba(13,31,53,0.08); }
+
+.ftab { display: none; }
+.ftab.active { display: block; }
+
+.city-header {
+  display: flex; align-items: center; gap: 10px;
+  margin: 18px 0 12px;
+}
+.city-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.city-name { font-weight: 900; font-size: 1rem; color: var(--navy); flex: 1; }
+.city-days { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--blue); }
+
+.rest-card {
+  background: var(--white);
+  border-radius: var(--r);
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.rest-header {
+  padding: 12px 15px 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.rest-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+.rest-meta { flex: 1; }
+.rest-name { font-weight: 900; font-size: 0.92rem; color: var(--navy); margin-bottom: 4px; line-height: 1.3; }
+.rest-name-ja { font-size: 0.75rem; color: var(--gray); font-weight: 400; margin-left: 3px; }
+.rest-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+.tag-main-food { background: var(--amber-pale); color: var(--amber); border: 1px solid rgba(200,118,26,0.2); }
+.tag-backup-f  { background: var(--ice); color: var(--blue); }
+.tag-ramen-f   { background: #fff0e4; color: #8a3a00; border: 1px solid rgba(138,58,0,0.12); }
+.tag-local-f   { background: var(--green-bg); color: var(--green); }
+.tag-sweet-f   { background: var(--purple-bg); color: var(--purple); }
+.noq { background: var(--green-bg); color: var(--green); }
+
+.rest-body { padding: 11px 15px 13px; }
+.rest-desc { font-size: 0.81rem; color: var(--text2); line-height: 1.65; margin-bottom: 8px; }
+
+.timing-box {
+  background: var(--warn-bg);
+  border-radius: var(--r-sm);
+  padding: 8px 11px;
+  font-size: 0.77rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.timing-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.67rem;
+  font-weight: 500;
+  color: var(--warn);
+  display: block;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.backup-box {
+  background: var(--surface);
+  border-radius: var(--r-sm);
+  padding: 8px 11px;
+  font-size: 0.77rem;
+  line-height: 1.6;
+  border-left: 3px solid var(--blue);
+}
+.backup-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.67rem;
+  color: var(--blue);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.day-food-row {
+  background: var(--white);
+  border-radius: var(--r);
+  padding: 13px 15px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.day-badge {
+  flex-shrink: 0;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 1.45;
+  min-width: 36px;
+}
+.meal-row { display: flex; gap: 8px; padding: 3px 0; }
+.meal-time-badge {
+  flex-shrink: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--blue);
+  background: var(--ice);
+  padding: 1px 6px;
+  border-radius: 4px;
+  height: fit-content;
+  margin-top: 2px;
+}
+.meal-main { font-size: 0.82rem; color: var(--navy); font-weight: 700; line-height: 1.45; }
+.meal-sub  { font-size: 0.74rem; color: var(--text2); margin-top: 2px; line-height: 1.4; }
+
+.sweet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+@media(max-width:480px){ .sweet-grid { grid-template-columns: 1fr; } }
+.sweet-card {
+  background: var(--white);
+  border-radius: var(--r);
+  padding: 13px 14px;
+  box-shadow: var(--shadow);
+  border-top: 3px solid var(--purple);
+}
+.sweet-city { font-family: 'DM Mono', monospace; font-size: 0.67rem; color: var(--purple); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+.sweet-name { font-weight: 900; font-size: 0.88rem; color: var(--navy); margin-bottom: 4px; }
+.sweet-desc { font-size: 0.75rem; color: var(--text2); line-height: 1.55; }
+
+.sec-divider { height: 1px; background: var(--border2); margin: 18px 0; }
+
+.no-ramen-warn {
+  background: var(--danger-bg);
+  border-radius: var(--r-sm);
+  padding: 10px 13px;
+  font-size: 0.78rem;
+  color: var(--danger);
+  border-left: 3px solid var(--danger);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* ══ 實際花費頁專用樣式 ══ */
+.exp-note { font-size: 0.72rem; color: var(--text2); margin-top: 3px; line-height: 1.55; }
+.exp-card {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--blue);
+  background: var(--ice);
+  padding: 1px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 4px;
+}
+.budget-section h3 .exp-total {
+  margin-left: auto;
+  font-family: 'DM Mono', monospace;
+  color: var(--accent);
+  font-size: 0.92rem;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🐻‍❄️ 2026 東北關東：北極熊追星手冊</h1>
+  <p>v15.0 &nbsp;·&nbsp; 6/18–6/24 &nbsp;·&nbsp; 台中出發 → 成田 → 橫濱 → 秋田（自駕）→ 仙台 → 台中</p>
+</div>
+
+<div class="nav-wrap">
+  <div class="nav">
+    <div class="nav-item active" onclick="showSec('itinerary',this)">📅 行程</div>
+    <div class="nav-item" onclick="showSec('transit',this)">🚆 交通</div>
+    <div class="nav-item" onclick="showSec('bears',this)">🐻 明星熊</div>
+    <div class="nav-item" onclick="showSec('food',this)">🍱 美食</div>
+    <div class="nav-item" onclick="showSec('budget',this)">💰 預算</div>
+    <div class="nav-item" onclick="showSec('sop',this)">🛡️ SOP</div>
+  </div>
+</div>
+
+<!-- ══════ Section 1: 行程 ══════ -->
+<div id="itinerary" class="section active">
+
+  <!-- D1 -->
+  <div class="day-card">
+    <div class="day-header" style="border-left: 5px solid #4299e1;">
+      <div>
+        <div class="day-date">D1 &nbsp;·&nbsp; 6/18 Thu</div>
+        <div class="day-title">成田 → 上野 → 橫濱</div>
+        <div class="bear-tags">
+          <span class="tag tag-bear">Ikoro 伊可羅</span>
+          <span class="tag tag-bear">Dea 蒂亞</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="focus-box">📍 目標：12:45 落地 → 14:00 前出關 → 搭 13:30/13:50 Skyliner 衝上野。若出關超過 14:00，放棄上野直接南下橫濱。</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">08:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-flight">JX800</span> 台北桃園起飛</div>
+            <div class="tl-desc">飛行約 3h 15m</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">12:45</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label">抵達成田 T2</div>
+            <div class="tl-desc">入關 + 取行李預估 45 分鐘</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">13:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-train">京成 Skyliner</span> 成田 → 上野（14:18 抵）</div>
+            <div class="tl-desc">延誤備案：搭 13:50 班次（14:38 抵上野）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">14:45</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-bear">上野動物園</span> Ikoro / Dea</div>
+            <div class="tl-desc">16:00 停止入園，17:00 閉園</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">17:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label">移動橫濱</div>
+            <div class="choice-box">
+              <div class="choice-title">方案 A（上野直達橫濱）</div>
+              上野站 → <span class="tag tag-train">JR JK 京濱東北根岸線</span> → 直達櫻木町（免換車）
+              <div class="choice-or">── 或 ──</div>
+              <div class="choice-title">方案 B（東京站美食後橫濱）</div>
+              上野 → 東京站 → 極味屋晚餐 → <span class="tag tag-train">JR JT 東海道線</span> → 橫濱 → 櫻木町
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">20:30</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Check-in 橫濱遠東致遠酒店</div>
+            <div class="tl-desc">櫻木町站步行範圍</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D2 -->
+  <div class="day-card">
+    <div class="day-header" style="border-left: 5px solid #f56565;">
+      <div>
+        <div class="day-date">D2 &nbsp;·&nbsp; 6/19 Fri</div>
+        <div class="day-title">橫濱：八景島 → 伊勢山皇大神宮</div>
+        <div class="bear-tags">
+          <span class="tag tag-bear">Yukimaru 雪丸</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="focus-box">📍 全天待八景島觀察雪丸。16:30 起程返回，17:45 抵達櫻木町後步行上坡參拜伊勢山皇大神宮（閉門 19:00，時間充裕）。</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">08:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label">出發 → 新杉田站轉乘</div>
+            <div class="tl-desc">櫻木町 → <span class="tag tag-train">JR JK 根岸線</span> → 新杉田，轉 <span class="tag tag-train">金澤海岸線</span> → 八景島（約 09:30 抵）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">10:00</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-bear">八景島海島樂園</span> 雪丸（全天）</div>
+            <div class="tl-desc">繡球花祭期間。注意水下玻璃視窗觀察時間。全天觀察，保留午餐休息時間。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">16:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label">起程返回橫濱市區</div>
+            <div class="tl-desc">金澤海岸線 → 新杉田 → <span class="tag tag-train">JR JK 根岸線</span> → 櫻木町（約 17:45 抵）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">17:45</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-shrine">伊勢山皇大神宮</span> 橫濱總鎮守</div>
+            <div class="tl-desc">從櫻木町站步行 10 分爬坡。<strong>閉門 19:00</strong>，可從容參拜。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">19:30</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-food">晚餐</span> 元町中華街</div>
+            <div class="tl-desc">景徳鎮刀削麵（主）/ 三陽中華そば（備案）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">夜宿</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><div class="tl-label">橫濱遠東致遠酒店</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D3 -->
+  <div class="day-card">
+    <div class="day-header" style="border-left: 5px solid #48bb78;">
+      <div>
+        <div class="day-date">D3 &nbsp;·&nbsp; 6/20 Sat</div>
+        <div class="day-title">Zoorasia → 東京 → 秋田</div>
+        <div class="bear-tags">
+          <span class="tag tag-bear">Icchan 伊醬</span>
+          <span class="tag tag-bear">Rai 萊</span>
+          <span class="tag tag-pass">JR East Pass 啟用 D1（6/20）</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="focus-box">📍 大行李早上寄放飯店，08:30 搭市巴 50 路直奔 Zoorasia。看伊醬、萊的上班放飯時間（09:30 開園）。<br>⚠️ <strong>保底末班車：小町 45 號 東京 20:16 發 → 秋田 23:53 抵</strong>。建議以 18:32 小町 41 號為目標，給東京站留充裕時間。</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">08:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-train">市巴 50 路</span> 櫻木町 4 號乘車處 → Zoorasia</div>
+            <div class="tl-desc">車程約 45–50 分。<strong>⚠️ 非 JR，需付現金（Pass 第 1 日不含）</strong></div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">09:30</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-bear">Zoorasia 橫濱動物園</span> 伊醬 / 萊（看上班放飯）</div>
+            <div class="tl-desc">注意北極熊水下視窗。上午是上班活躍時段。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">13:30</div>
+          <div class="tl-dot dot-warn"></div>
+          <div class="tl-content">
+            <div class="tl-label">撤退 Zoorasia → 回飯店取行李</div>
+            <div class="tl-desc">搭市巴 50 路回櫻木町，約 14:20 抵達。取行李後前往橫濱站或東京站。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">16:00</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-food">晚餐</span> 東京站出發前</div>
+            <div class="tl-desc">極味屋 / 六厘舍 / 飯田商店（東京站 B1）— 三選一，不排隊</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">18:32</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-train">JR 小町號 41（E6系）</span> 東京 → 秋田（22:32 抵）</div>
+            <div class="tl-desc">全車指定席，務必提前劃位。E6 系車廂較窄，大行李放車廂末端。</div>
+            <div class="deadline-box">
+              <div class="deadline-title">🚨 保底末班車</div>
+              <strong>小町 45 號</strong>：東京 <strong>20:16</strong> 發 → 秋田 <strong>23:53</strong> 抵（同樣全車指定席）
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">22:32</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Check-in 秋田大飯店（ANA CP）</div>
+            <div class="tl-desc">秋田站西口步行 3 分鐘。到房確認明天租車時間。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D4 -->
+  <div class="day-card">
+    <div class="day-header" style="border-left: 5px solid #9f7aea;">
+      <div>
+        <div class="day-date">D4 &nbsp;·&nbsp; 6/21 Sun</div>
+        <div class="day-title">秋田自駕 Day 1：雲昌寺 → GAO → 鵜ノ崎</div>
+        <div class="bear-tags">
+          <span class="tag tag-bear">Gōta 豪太</span>
+          <span class="tag tag-bear">Momo 桃子</span>
+          <span class="tag tag-bear">Momoko 桃子小熊</span>
+          <span class="tag tag-drive">🚗 自駕</span>
+          <span class="tag tag-pass">JR East Pass D2（6/21）</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="focus-box">📍 11:00 取車（12:00 前牽車皆安全）。若早上有空，可先去太平山三吉神社。下午行程：雲昌寺繡球花 → 男鹿 GAO 觀察北極熊下班後場行為 → 鵜ノ崎海岸夕陽。車停秋田大飯店合作車位 ¥1,000/日。</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">08:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label">（選配）<span class="tag tag-shrine">太平山三吉神社</span></div>
+            <div class="tl-desc">秋田站東口 4 號搭公車，早上若有空可先參拜。取車前返回。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">11:00</div>
+          <div class="tl-dot dot-drive"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-drive">🚗 自駕取車</span></div>
+            <div class="tl-desc">12:00 前牽車皆安全。車位：秋田大飯店合作停車場 ¥1,000/日。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">12:00</div>
+          <div class="tl-dot dot-drive"></div>
+          <div class="tl-content">
+            <div class="tl-label">自駕 → 雲昌寺（約 70 分）</div>
+            <div class="tl-desc">男鹿半島上的紫陽花寺，6 月正當季。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">14:30</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-bear">男鹿水族館 GAO</span> 豪太 / 桃子 / 桃子小熊（下班後場行為）</div>
+            <div class="tl-desc">下午為第二活躍時段，觀察下班後場行為。入館票 ¥1,100。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">16:30</div>
+          <div class="tl-dot dot-drive"></div>
+          <div class="tl-content">
+            <div class="tl-label">自駕 → 鵜ノ崎海岸</div>
+            <div class="tl-desc">日本百大海岸，夕陽時刻潮退可走上海中岩礁。約 15 分車程。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">18:30</div>
+          <div class="tl-dot dot-drive"></div>
+          <div class="tl-content">
+            <div class="tl-label">自駕返回秋田市</div>
+            <div class="tl-desc">約 60 分車程，車停合作車位後步行回飯店。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">20:00</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-food">晚餐</span> 麺屋 音（濃厚雞白湯）</div>
+            <div class="tl-desc">秋田站步行 12 分。備案：秋田比內や きりたんぽ鍋（站內）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">夜宿</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><div class="tl-label">秋田大飯店（ANA CP）</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D5 -->
+  <div class="day-card">
+    <div class="day-header" style="border-left: 5px solid #ecc94b;">
+      <div>
+        <div class="day-date">D5 &nbsp;·&nbsp; 6/22 Mon</div>
+        <div class="day-title">秋田自駕 Day 2 → 仙台</div>
+        <div class="bear-tags">
+          <span class="tag tag-bear">Gōta 豪太</span>
+          <span class="tag tag-bear">Momo 桃子</span>
+          <span class="tag tag-bear">Momoko 桃子小熊</span>
+          <span class="tag tag-drive">🚗 自駕</span>
+          <span class="tag tag-pass">JR East Pass D3（6/22）</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="focus-box">📍 07:45 出發衝 GAO，看豪太、桃子、桃子小熊的上班放飯與中午放飯。看完熊後自駕返秋田還車，搭新幹線前往仙台。<br>⚠️ <strong>還車最晚 19:00。末班車保底：小町 96 號 秋田 21:03 → 仙台 23:14（19:00 前完成還車）</strong></div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">07:45</div>
+          <div class="tl-dot dot-drive"></div>
+          <div class="tl-content">
+            <div class="tl-label">自駕出發 → GAO（約 70 分）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">09:00</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-bear">男鹿水族館 GAO</span> 豪太 / 桃子 / 桃子小熊（上班放飯 + 中午放飯）</div>
+            <div class="tl-desc">上午 09:00–11:00 早晨活躍時段。11:00–13:30 熊睡覺 → 強制午休。14:00 起再看下午餵食。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">16:00</div>
+          <div class="tl-dot dot-drive"></div>
+          <div class="tl-content">
+            <div class="tl-label">看完熊熊下班 → 自駕返秋田站還車</div>
+            <div class="tl-desc">車程約 60 分。<strong>還車後立即前往秋田站</strong>搭新幹線。</div>
+            <div class="choice-box">
+              <div class="choice-title">✅ 推薦方案：看到 16:00 下班</div>
+              自駕返秋田 → <strong>19:00 前完成還車</strong> → <strong>小町 48 號</strong> 秋田 <strong>18:16</strong> 發 → 仙台 <strong>20:29</strong> 抵
+              <div class="choice-or">── 最後末班車 ──</div>
+              <div class="choice-title">🚨 末班車保底：19:00 前還完車</div>
+              <strong>小町 96 號</strong> 秋田 <strong>21:03</strong> 發 → 仙台 <strong>23:14</strong> 抵
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time"></div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Check-in 相鐵 FRESA INN 仙台</div>
+            <div class="tl-desc">抵仙台後 check-in，視時間決定是否外出覓食或便利商店解決。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D6 -->
+  <div class="day-card">
+    <div class="day-header" style="border-left: 5px solid #4a5568;">
+      <div>
+        <div class="day-date">D6 &nbsp;·&nbsp; 6/23 Tue</div>
+        <div class="day-title">仙台八木山：五熊聚首 ＋ 金蛇水決策</div>
+        <div class="bear-tags">
+          <span class="tag tag-bear">Kai 凱</span>
+          <span class="tag tag-bear">Paula 寶拉</span>
+          <span class="tag tag-bear">Umi 海</span>
+          <span class="tag tag-bear">Sora 空</span>
+          <span class="tag tag-pass">JR East Pass D4（6/23）</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="focus-box">📍 09:30 入園朝聖四熊。<strong>現場決策死線 14:15</strong>：決定是否去金蛇水神社。不去則 15:30 回仙台站執行 DHC 補貨任務。</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">09:00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-train">仙台地下鐵東西線</span> 仙台站 → 八木山動物公園</div>
+            <div class="tl-desc">車程 12 分，需另購票（約 370 JPY）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">09:30</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-bear">八木山動物公園</span> 凱 / 寶拉 / 海 / 空</div>
+            <div class="tl-desc">高台動物園起伏大，體能消耗高。午後餵食為精華時段。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">14:15</div>
+          <div class="tl-dot dot-warn"></div>
+          <div class="tl-content">
+            <div class="tl-label">🔴 現場決策死線</div>
+            <div class="choice-box">
+              <div class="choice-title">去金蛇水方案</div>
+              14:15 離開八木山 → <span class="tag tag-train">JR 東北本線</span> 14:46 班次 → 岩沼（15:05 抵）→ 計程車 10 分 → <strong>15:20 抵金蛇水神社</strong>
+              <div class="choice-or">── 或 ──</div>
+              <div class="choice-title">不去蛇屋方案</div>
+              繼續看熊 → 15:30 返仙台站 → <span class="tag tag-shop">S-PAL 仙台</span> DHC 補貨任務
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">15:30+</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-food">午晚餐</span> 田所商店 東北濃厚味噌</div>
+            <div class="tl-desc">仙台站徒步 8 分，平日午後幾乎免排。奶油玉米加起來，吃完回飯店躺平。</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">16:00</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-food">甜點</span> ずんだシェイク（仙台站 ずんだ茶寮）</div>
+            <div class="tl-desc">DHC 補貨前後順手買，5 分鐘解決</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">16:30</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-shop">S-PAL 仙台</span> DHC 補貨任務</div>
+            <div class="tl-desc">Maca / EPA / 肝臟精華 / 鋅 / Vit-C / 葉酸 / 葉黃素</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">夜宿</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label">相鐵 FRESA INN 仙台</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D7 -->
+  <div class="day-card">
+    <div class="day-header" style="border-left: 5px solid #ed8936;">
+      <div>
+        <div class="day-date">D7 &nbsp;·&nbsp; 6/24 Wed</div>
+        <div class="day-title">歸途：仙台 → 東京 → 成田 → 台中</div>
+        <div class="bear-tags">
+          <span class="tag tag-pass">JR East Pass D5（6/24，最後一天）</span>
+          <span class="tag tag-flight">JX315 16:00 起飛</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="focus-box">📍 09:34 隼號 10 仙台發 → 11:04 東京抵。11:15–13:00 東京站：極味屋漢堡排 + 採買萩之月。13:03 N'EX 27 → 14:02 成田 T2。<br>⚠️ <strong>賴床保底死線（放棄東京行程）：隼號 16 仙台 11:21 → 東京 12:56 → N'EX 29 東京 13:33 → 成田 14:32</strong></div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">08:30</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label">仙台站 S-PAL 採買</div>
+            <div class="tl-desc">政宗公の御膳便當（新幹線用）+ 萩之月（伴手禮）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">09:34</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-train">JR 隼號 10（E5）</span> 仙台 → 東京（11:04 抵）</div>
+            <div class="choice-box">
+              <div class="choice-title">✅ 推薦：09:34 隼號 10</div>
+              11:04 抵東京 → 步行 20–25 分 → 接 <strong>13:03 N'EX 27</strong>（緩衝 119 分，東京站行程充裕）
+              <div class="choice-or">── 賴床保底方案 ──</div>
+              <div class="choice-title">🚨 隼號 16（放棄東京行程）</div>
+              仙台 <strong>11:21</strong> 發 → 東京 <strong>12:56</strong> 抵 → <strong>N'EX 29</strong> 東京 13:33 → 成田 <strong>14:32</strong> 抵
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">11:15</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label">東京站行程（有 N'EX 前的充裕時間）</div>
+            <div class="tl-desc">🥩 極味屋漢堡排（東京站 Gransta）+ 🌙 萩之月追加採購（若 S-PAL 未買齊）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">13:03</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-train">N'EX 27 號</span> 東京 → 成田空港（14:02 抵 T2）</div>
+            <div class="tl-desc">新幹線月台（3F）→ 地下 N'EX 月台，預留 20–25 分鐘（大行李 +5 分）</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">16:00</div>
+          <div class="tl-dot dot-green"></div>
+          <div class="tl-content">
+            <div class="tl-label"><span class="tag tag-flight">JX315</span> 成田起飛 → 台中清泉崗（18:50 降落）</div>
+            <div class="tl-desc">下機搭計程車至清水車站，轉台鐵回精武。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /itinerary -->
+
+
+<!-- ══════ Section 2: 交通劃位 ══════ -->
+<div id="transit" class="section">
+  <div class="transit-card">
+    <h3>🛤️ 主要新幹線 / 特急一覽</h3>
+    <table class="transit-table">
+      <tr><td class="t-time">D1</td><td><span class="tag tag-train">Skyliner</span> 成田 → 上野 &nbsp;<span style="color:var(--gray);font-size:0.75rem">2,570 JPY</span></td></tr>
+      <tr><td class="t-time">D3</td><td><span class="tag tag-train">小町號 41 (E6)</span> 東京 18:32 → 秋田 22:32<div class="detail-box"><span class="logic-label">✅ 推薦</span>全車指定席，E6 系大行李放車廂末端。</div><div class="detail-box" style="border-left:3px solid var(--danger);"><span class="logic-label" style="color:var(--danger)">🚨 保底末班車</span>小町 45 號：東京 <strong>20:16</strong> → 秋田 <strong>23:53</strong></div></td></tr>
+      <tr><td class="t-time">D5</td><td><span class="tag tag-train">小町號 48</span> 秋田 18:16 → 仙台 20:29 &nbsp;<span class="tag tag-pass">推薦</span><div class="detail-box" style="border-left:3px solid var(--danger);"><span class="logic-label" style="color:var(--danger)">🚨 末班保底</span>小町 96 號：秋田 <strong>21:03</strong> → 仙台 <strong>23:14</strong>（還車最晚 <strong>19:00</strong>）</div></td></tr>
+      <tr><td class="t-time">D7</td><td><span class="tag tag-train">隼號 10 (E5)</span> 仙台 09:34 → 東京 11:04 &nbsp;<span class="tag tag-pass">推薦</span><div class="detail-box"><span class="logic-label">✅ 推薦方案</span>接 13:03 N'EX 27，東京站有充裕時間吃飯採購。</div><div class="detail-box" style="border-left:3px solid var(--danger);"><span class="logic-label" style="color:var(--danger)">🚨 賴床保底</span>隼號 16：仙台 11:21 → 東京 12:56 → N'EX 29（13:33）→ 成田 14:32（放棄東京行程）</div></td></tr>
+      <tr><td class="t-time">D7</td><td><span class="tag tag-train">N'EX 27 號</span> 東京 13:03 → 成田 T2（14:02）<div class="detail-box"><span class="logic-label">⚡ 地底長征</span>新幹線月台步行至 N'EX 月台約 20–25 分鐘。遵循「成田エクスプレス」紅色指標。</div></td></tr>
+    </table>
+  </div>
+
+  <div class="transit-card">
+    <h3>🚌 接駁 / 地方交通</h3>
+    <table class="transit-table">
+      <tr><td class="t-time">D2</td><td><span class="tag tag-train">JR JK 根岸線</span> 櫻木町 → 新杉田 → <span class="tag tag-train">金澤海岸線</span> → 八景島（非 JR，需另購票）。全天觀察雪丸。</td></tr>
+      <tr><td class="t-time">D3</td><td><span class="tag tag-train">市巴 50 路</span> 櫻木町 4 號 → Zoorasia，約 45 分。<strong>⚠️ 非 JR，Pass 不含，現金支付。13:30 撤退。</strong></td></tr>
+      <tr><td class="t-time">D4–D5</td><td><span class="tag tag-drive">🚗 自駕</span> 秋田市區 → 男鹿半島（約 70 分）。D4 取車 → D5 看完熊後返秋田還車。<div class="detail-box"><span class="logic-label">🅿️ 停車</span>秋田大飯店合作車位，¥1,000/日。</div></td></tr>
+      <tr><td class="t-time">D6</td><td><span class="tag tag-train">地下鐵東西線</span> 仙台 → 八木山動物公園，12 分（非 JR，約 370 JPY）</td></tr>
+      <tr><td class="t-time">D6</td><td>（選配）岩沼：仙台 → <span class="tag tag-train">JR 東北本線</span> 14:46 → 岩沼 15:05 → 計程車 10 分（GO App）→ 金蛇水神社</td></tr>
+    </table>
+  </div>
+
+  <div class="transit-card">
+    <h3>🗂️ JR 路線縮寫對照</h3>
+    <table class="transit-table">
+      <tr><td><strong>JK</strong></td><td>京濱東北線 / 根岸線（上野↔大船）</td></tr>
+      <tr><td><strong>JT</strong></td><td>東海道線（東京↔熱海方向）</td></tr>
+      <tr><td><strong>N'EX</strong></td><td>成田特快（東京↔成田空港）</td></tr>
+    </table>
+  </div>
+</div><!-- /transit -->
+
+
+<!-- ══════ Section 3: 明星熊 ══════ -->
+<div id="bears" class="section">
+  <div class="bear-group">
+    <h3>🗼 東京 · 上野動物園</h3>
+    <div class="bear-row"><div class="bear-name">Ikoro</div><div class="bear-cn">伊可羅</div><div class="bear-loc">D1 · 6/18</div></div>
+    <div class="bear-row"><div class="bear-name">Dea</div><div class="bear-cn">蒂亞</div><div class="bear-loc">D1 · 6/18</div></div>
+  </div>
+  <div class="bear-group">
+    <h3>🌊 橫濱 · 八景島海島樂園</h3>
+    <div class="bear-row"><div class="bear-name">Yukimaru</div><div class="bear-cn">雪丸</div><div class="bear-loc">D2 · 6/19</div></div>
+  </div>
+  <div class="bear-group">
+    <h3>🌿 橫濱 · Zoorasia 橫濱動物園</h3>
+    <div class="bear-row"><div class="bear-name">Icchan</div><div class="bear-cn">伊醬</div><div class="bear-loc">D3 · 6/20</div></div>
+    <div class="bear-row"><div class="bear-name">Rai</div><div class="bear-cn">萊</div><div class="bear-loc">D3 · 6/20</div></div>
+  </div>
+  <div class="bear-group purple">
+    <h3>🐉 男鹿 · GAO 水族館（秋田）</h3>
+    <div class="bear-row"><div class="bear-name">Gōta</div><div class="bear-cn">豪太</div><div class="bear-loc">D4+D5 · 6/21–22</div></div>
+    <div class="bear-row"><div class="bear-name">Momo</div><div class="bear-cn">桃子</div><div class="bear-loc">D4+D5 · 6/21–22</div></div>
+    <div class="bear-row"><div class="bear-name">Momoko</div><div class="bear-cn">桃子小熊 🍼</div><div class="bear-loc">D4+D5 · 6/21–22</div></div>
+  </div>
+  <div class="bear-group green">
+    <h3>🏙️ 仙台 · 八木山動物公園</h3>
+    <div class="bear-row"><div class="bear-name">Kai</div><div class="bear-cn">凱</div><div class="bear-loc">D6 · 6/23</div></div>
+    <div class="bear-row"><div class="bear-name">Paula</div><div class="bear-cn">寶拉</div><div class="bear-loc">D6 · 6/23</div></div>
+    <div class="bear-row"><div class="bear-name">Umi</div><div class="bear-cn">海</div><div class="bear-loc">D6 · 6/23</div></div>
+    <div class="bear-row"><div class="bear-name">Sora</div><div class="bear-cn">空</div><div class="bear-loc">D6 · 6/23</div></div>
+  </div>
+  <div style="background:var(--ice);border-radius:var(--r-sm);padding:12px 14px;font-size:0.8rem;color:var(--blue);">
+    🐻‍❄️ 本次追星總計：<strong>12 隻北極熊</strong> × 5 座場館（GAO 三隻：豪太＋桃子＋桃子小熊 Momoko，連訪兩天）
+  </div>
+</div><!-- /bears -->
+
+
+<!-- ══════ Section 4: 美食 ══════ -->
+<div id="food" class="section">
+
+  <div class="food-nav-wrap">
+    <button class="food-tab active" onclick="showFoodTab('f-summary',this)">📅 每日總覽</button>
+    <button class="food-tab" onclick="showFoodTab('f-ramen',this)">🍜 拉麵</button>
+    <button class="food-tab" onclick="showFoodTab('f-local',this)">🥘 在地美食</button>
+    <button class="food-tab" onclick="showFoodTab('f-sweet',this)">🍡 甜點</button>
+    <button class="food-tab" onclick="showFoodTab('f-dhc',this)">💊 DHC</button>
+  </div>
+
+  <!-- 每日總覽 -->
+  <div id="f-summary" class="ftab active">
+
+    <div class="day-food-row">
+      <div class="day-badge">D1<br>6/18</div>
+      <div style="flex:1">
+        <div class="meal-row"><div class="meal-time-badge">晚</div><div><div class="meal-main">🥩 極味屋漢堡排（東京站 Gransta）</div><div class="meal-sub">備案：六厘舍濃厚魚介沾麵 / 飯田商店発泡雞白湯（東京站 B1）</div></div></div>
+      </div>
+    </div>
+
+    <div class="day-food-row">
+      <div class="day-badge">D2<br>6/19</div>
+      <div style="flex:1">
+        <div class="meal-row"><div class="meal-time-badge">午</div><div><div class="meal-main">🌊 八景島館內餐廳（海景位）</div><div class="meal-sub">備案：出發前買崎陽軒便當帶入</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">晚</div><div><div class="meal-main">🏮 元町中華街 景徳鎮 刀削麵</div><div class="meal-sub">備案：三陽（サンヨー）老字號中華そば（1947 年）</div></div></div>
+      </div>
+    </div>
+
+    <div class="day-food-row">
+      <div class="day-badge">D3<br>6/20</div>
+      <div style="flex:1">
+        <div class="meal-row"><div class="meal-time-badge">午</div><div><div class="meal-main">🌿 Zoorasia 館內餐廳</div><div class="meal-sub">備案：橫濱站 CIAL 崎陽軒便當帶入</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">晚</div><div><div class="meal-main">🚄 東京站拉麵街快食（出發前）</div><div class="meal-sub">極味屋 / 六厘舍 / 飯田商店，三選一，不排隊</div></div></div>
+      </div>
+    </div>
+
+    <div class="day-food-row">
+      <div class="day-badge">D4<br>6/21</div>
+      <div style="flex:1">
+        <div class="meal-row"><div class="meal-time-badge">午</div><div><div class="meal-main">🌸 男鹿半島 自駕途中（雲昌寺周邊）</div><div class="meal-sub">備案：出發前秋田站便利商店 / 便當帶去</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">晚</div><div><div class="meal-main">🍜 麺屋 音 濃厚雞白湯（秋田站步行 12 分）</div><div class="meal-sub">備案：秋田比內や きりたんぽ鍋（秋田站內）</div></div></div>
+      </div>
+    </div>
+
+    <div class="day-food-row">
+      <div class="day-badge">D5<br>6/22</div>
+      <div style="flex:1">
+        <div class="meal-row"><div class="meal-time-badge">帶去</div><div><div class="meal-main">🎁 秋田站「トピコ」買便當 + 金萬饅頭</div><div class="meal-sub">比內地鶏親子便當 / 稻庭烏龍冷麵便當 + 金萬（GAO 午休點心）</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">午</div><div><div class="meal-main">🐻 GAO 館內小食堂（強制休息 11:00–13:30）</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">晚</div><div><div class="meal-main">🚄 仙台抵達後（視時間）</div><div class="meal-sub">若 20:29 抵仙台 → 附近覓食；若 23:14 末班抵 → 便利商店解決</div></div></div>
+      </div>
+    </div>
+
+    <div class="day-food-row">
+      <div class="day-badge">D6<br>6/23</div>
+      <div style="flex:1">
+        <div class="meal-row"><div class="meal-time-badge">午晚</div><div><div class="meal-main">🫙 田所商店 東北濃厚味噌（撤退後）</div><div class="meal-sub">仙台站徒步 8 分，平日午後幾乎免排。奶油玉米加起來。</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">甜</div><div><div class="meal-main">🍡 ずんだシェイク（仙台站 ずんだ茶寮）</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">備案</div><div><div class="meal-main">❄️ 冷やし中華「龍亭」（仙台發源地）</div><div class="meal-sub">清爽一碗魚介冷湯，6 月當季</div></div></div>
+      </div>
+    </div>
+
+    <div class="day-food-row">
+      <div class="day-badge">D7<br>6/24</div>
+      <div style="flex:1">
+        <div class="meal-row"><div class="meal-time-badge">早</div><div><div class="meal-main">🎁 仙台站 S-PAL「政宗公の御膳」便當</div><div class="meal-sub">備案：こばやし 仙台牛肉便當</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">東京</div><div><div class="meal-main">🥩 極味屋漢堡排（東京站 Gransta）</div><div class="meal-sub">賴床保底方案時放棄，成田候機廳隨意</div></div></div>
+        <div class="meal-row"><div class="meal-time-badge">帶回</div><div><div class="meal-main">萩之月 + 稻庭烏龍麵 + いぶりがっこ</div></div></div>
+      </div>
+    </div>
+
+  </div><!-- /f-summary -->
+
+  <!-- 拉麵 -->
+  <div id="f-ramen" class="ftab">
+
+    <div style="background:var(--navy);border-radius:var(--r);padding:14px 16px;margin-bottom:14px;color:#fff;">
+      <div style="font-size:0.75rem;color:var(--amber-light);font-family:'DM Mono',monospace;margin-bottom:5px;letter-spacing:0.08em;">口味方向</div>
+      <div style="font-size:0.82rem;color:rgba(255,255,255,0.75);line-height:1.6;">濃厚豚骨 · 濃厚味噌 · 魚介系 · 発泡系（泡立ち）<br>醬油清淡系全數排除 · 完全不排隊原則</div>
+    </div>
+
+    <div class="city-header"><div class="city-dot" style="background:#c8761a"></div><div class="city-name">東京</div><div class="city-days">D1 · D7</div></div>
+
+    <div class="rest-card">
+      <div class="rest-header">
+        <div class="rest-icon">🫧</div>
+        <div class="rest-meta">
+          <div class="rest-name">飯田商店 系列店<span class="rest-name-ja">（東京站一番街）</span></div>
+          <div class="rest-tags"><span class="tag tag-ramen-f">発泡雞白湯</span><span class="tag noq">✓ 免排</span><span class="tag tag-main-food">首推</span></div>
+        </div>
+      </div>
+      <div class="rest-body">
+        <div class="rest-desc">湯面細密白色泡沫，入口如慕斯包覆麵條。発泡系代表作，東京站一番街平日開門前到基本不用等。</div>
+        <div class="timing-box"><span class="timing-label">建議時機</span>D1 極味屋排隊超過 20 分 → 直接換這裡 ／ D7 N'EX 前快食</div>
+      </div>
+    </div>
+
+    <div class="rest-card">
+      <div class="rest-header">
+        <div class="rest-icon">🐟</div>
+        <div class="rest-meta">
+          <div class="rest-name">六厘舍<span class="rest-name-ja">（東京拉麵街）</span></div>
+          <div class="rest-tags"><span class="tag tag-ramen-f">濃厚魚介沾麵</span><span class="tag noq">✓ 開門即入</span><span class="tag tag-backup-f">D1/D7備案</span></div>
+        </div>
+      </div>
+      <div class="rest-body">
+        <div class="rest-desc">魚介豚骨濃湯，粗麵吸附力強。同在東京站 B1 拉麵街，極味屋排隊超過 20 分直接換。</div>
+        <div class="backup-box"><span class="backup-label">備案邏輯</span>極味屋排隊 → 六厘舍 → 飯田商店，三選一，全在東京站 B1</div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <div class="city-header"><div class="city-dot" style="background:#2d6a4f"></div><div class="city-name">橫濱</div><div class="city-days">D2 · D3</div></div>
+
+    <div class="rest-card">
+      <div class="rest-header">
+        <div class="rest-icon">🔪</div>
+        <div class="rest-meta">
+          <div class="rest-name">景徳鎮 刀削麵<span class="rest-name-ja">（元町中華街）</span></div>
+          <div class="rest-tags"><span class="tag tag-local-f">手工刀削</span><span class="tag noq">✓ 免排</span><span class="tag tag-main-food">D2晚餐</span></div>
+        </div>
+      </div>
+      <div class="rest-body">
+        <div class="rest-desc">手工現削，湯頭選紅燒牛肉或番茄蛋。D2 伊勢山後步行下坡，輕鬆一碗。</div>
+        <div class="backup-box"><span class="backup-label">備案</span>三陽（サンヨー）1947 年老店，醬油魚介清湯，在地老人居多，免排</div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <div class="city-header"><div class="city-dot" style="background:#5b3fa0"></div><div class="city-name">秋田</div><div class="city-days">D4晚</div></div>
+
+    <div class="rest-card">
+      <div class="rest-header">
+        <div class="rest-icon">🐔</div>
+        <div class="rest-meta">
+          <div class="rest-name">麺屋 音<span class="rest-name-ja">（めんや おと）</span></div>
+          <div class="rest-tags"><span class="tag tag-ramen-f">濃厚雞白湯</span><span class="tag noq">✓ 平日免排</span><span class="tag tag-main-food">D4晚首選</span></div>
+        </div>
+      </div>
+      <div class="rest-body">
+        <div class="rest-desc">秋田市內濃厚系評價最高，雞白湯帶発泡感，現代風格。D4 自駕回來後步行 12 分，秋田唯一值得專程去的一碗。</div>
+        <div class="backup-box"><span class="backup-label">若公休備案</span>秋田比內や「きりたんぽ鍋」（秋田站內，不用找路）</div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+
+    <div class="city-header"><div class="city-dot" style="background:#c0392b"></div><div class="city-name">仙台</div><div class="city-days">D6</div></div>
+
+    <div class="rest-card">
+      <div class="rest-header">
+        <div class="rest-icon">🫙</div>
+        <div class="rest-meta">
+          <div class="rest-name">田所商店 仙台店</div>
+          <div class="rest-tags"><span class="tag tag-ramen-f">東北濃厚味噌</span><span class="tag noq">✓ 午後免排</span><span class="tag tag-main-food">D6首選</span></div>
+        </div>
+      </div>
+      <div class="rest-body">
+        <div class="rest-desc">東北味噌系代表，奶油玉米可加，湯頭厚重有層次。D6 八木山撤退後直接去，吃完回飯店躺平，這趟最應得的一碗。</div>
+      </div>
+    </div>
+
+    <div class="rest-card">
+      <div class="rest-header">
+        <div class="rest-icon">❄️</div>
+        <div class="rest-meta">
+          <div class="rest-name">冷やし中華「龍亭」<span class="rest-name-ja">（仙台發源地）</span></div>
+          <div class="rest-tags"><span class="tag tag-ramen-f">魚介冷湯</span><span class="tag noq">✓ 免排</span><span class="tag tag-local-f">6月當季</span><span class="tag tag-backup-f">備案</span></div>
+        </div>
+      </div>
+      <div class="rest-body">
+        <div class="rest-desc">仙台冷やし中華始祖店，6 月正當季，清爽舒服。若田所商店不想吃可換這個。</div>
+      </div>
+    </div>
+
+    <div class="no-ramen-warn">⚠️ <strong>彩未（さいみ）不推薦</strong>：仙台味噌頂點，但開門前需等 30–40 分，不符合不排隊原則，直接略過。</div>
+
+  </div><!-- /f-ramen -->
+
+  <!-- 在地美食 -->
+  <div id="f-local" class="ftab">
+
+    <div class="city-header"><div class="city-dot" style="background:#c8761a"></div><div class="city-name">東京 / 橫濱</div><div class="city-days">D1–D3</div></div>
+
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🥩</div><div class="rest-meta"><div class="rest-name">極味屋<span class="rest-name-ja">（東京站 Gransta）</span></div><div class="rest-tags"><span class="tag tag-main-food">任務餐廳 D1·D7</span><span class="tag tag-local-f">漢堡排</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">D1 晚餐 / D7 東京站行程主任務。等候超過 20 分鐘直接切換東京拉麵街，不要硬等。</div></div>
+    </div>
+
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🥟</div><div class="rest-meta"><div class="rest-name">崎陽軒 燒賣便當<span class="rest-name-ja">（シウマイ弁当）</span></div><div class="rest-tags"><span class="tag tag-local-f">橫濱 1908 年</span><span class="tag noq">✓ 隨時買</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">橫濱最具代表性的在地日常食物，橫濱站 CIAL 隨時有貨。D2 午餐帶入八景島 / D3 帶入 Zoorasia 皆可。</div></div>
+    </div>
+
+    <div class="sec-divider"></div>
+    <div class="city-header"><div class="city-dot" style="background:#5b3fa0"></div><div class="city-name">秋田</div><div class="city-days">D4–D5</div></div>
+
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🍶</div><div class="rest-meta"><div class="rest-name">きりたんぽ鍋<span class="rest-name-ja">（秋田比內や）</span></div><div class="rest-tags"><span class="tag tag-local-f">秋田鄉土料理</span><span class="tag noq">✓ 站內</span><span class="tag tag-backup-f">D4晚備案</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">比內雞湯底、米棒、牛蒡、芹菜，秋田最代表性的鍋物。D4 若不想走去麺屋 音，站內直接解決。</div></div>
+    </div>
+
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🟡</div><div class="rest-meta"><div class="rest-name">いぶりがっこ（燻漬蘿蔔）</div><div class="rest-tags"><span class="tag tag-local-f">秋田特產</span><span class="tag tag-backup-f">零食 / 伴手禮</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">煙燻黃蘿蔔乾，鹹香有嚼勁，真空包裝好攜帶。D5 還車前秋田站採買順手帶，台灣買不到的在地味道。</div></div>
+    </div>
+
+    <div class="sec-divider"></div>
+    <div class="city-header"><div class="city-dot" style="background:#c0392b"></div><div class="city-name">仙台</div><div class="city-days">D6–D7</div></div>
+
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🥩</div><div class="rest-meta"><div class="rest-name">炭燒牛舌<span class="rest-name-ja">（善治郎 / 利久）</span></div><div class="rest-tags"><span class="tag tag-local-f">仙台名物</span><span class="tag tag-backup-f">D5晚抵仙台後（推薦）</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">D5 若 20:29 抵仙台且精力尚存，可吃一頓牛舌。備案：たんや 結（仙台站內，座位多等候短）。</div></div>
+    </div>
+
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🚄</div><div class="rest-meta"><div class="rest-name">政宗公の御膳<span class="rest-name-ja">（こばやし）</span></div><div class="rest-tags"><span class="tag tag-local-f">仙台鐵路便當</span><span class="tag tag-main-food">D7早餐</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">仙台最具代表性的牛肉便當，D7 出發前仙台站採買，新幹線上吃。</div></div>
+    </div>
+
+  </div><!-- /f-local -->
+
+  <!-- 甜點 -->
+  <div id="f-sweet" class="ftab">
+
+    <div style="background:var(--purple-bg);border-radius:var(--r);padding:13px 16px;margin-bottom:14px;border:1px solid rgba(96,64,192,0.12);font-size:0.8rem;color:var(--purple);line-height:1.6;">
+      🍡 <strong>甜點原則：全部路過就買，不需要特別安排時間。</strong>動物園體能消耗大，甜點是最好的即時回血方式。
+    </div>
+
+    <div class="sweet-grid">
+      <div class="sweet-card">
+        <div class="sweet-city">橫濱 · D2</div>
+        <div class="sweet-name">🍦 馬車道アイス</div>
+        <div class="sweet-desc">橫濱發祥西式冰淇淋，馬車道商店街老店。D2 伊勢山後散步途中隨手吃，清爽回血。</div>
+      </div>
+      <div class="sweet-card">
+        <div class="sweet-city">秋田 · D5</div>
+        <div class="sweet-name">🥮 金萬（きんまん）</div>
+        <div class="sweet-desc">秋田名物白餡小饅頭，皮薄餡甜。D5 出發前秋田站買一盒帶去 GAO，11:00 強制休息時配茶吃。</div>
+      </div>
+      <div class="sweet-card" style="border-top-color:var(--accent);">
+        <div class="sweet-city" style="color:var(--accent);">仙台 · D6 ⭐ 首推</div>
+        <div class="sweet-name">🍡 ずんだ餅 / シェイク</div>
+        <div class="sweet-desc">仙台最強甜點。新鮮毛豆磨泥拌糖，甜度溫和清爽。仙台站ずんだ茶寮，D6 DHC 前後 5 分鐘解決。<strong>這趟甜點絕對首選。</strong></div>
+      </div>
+      <div class="sweet-card" style="border-top-color:var(--green);">
+        <div class="sweet-city" style="color:var(--green);">帶回台灣 · D7</div>
+        <div class="sweet-name">🌙 萩之月</div>
+        <div class="sweet-desc">仙台最知名伴手禮，D7 S-PAL 採買（或 D6 先買）。留一個在新幹線上吃，其餘帶回台灣。</div>
+      </div>
+    </div>
+
+    <div class="sec-divider"></div>
+    <div style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:10px;">🎁 帶回台灣清單</div>
+
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🍜</div><div class="rest-meta"><div class="rest-name">稻庭烏龍麵</div><div class="rest-tags"><span class="tag tag-local-f">秋田特產</span><span class="tag tag-backup-f">D5 還車前採買</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">秋田站「トピコ」或秋田比內や均有販售。帶片裝回台灣煮一鍋回味。</div></div>
+    </div>
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🟡</div><div class="rest-meta"><div class="rest-name">いぶりがっこ（燻蘿蔔）</div><div class="rest-tags"><span class="tag tag-local-f">秋田特產</span><span class="tag tag-backup-f">D5 順手帶</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">真空包裝，秋田站內超市有售。台灣買不到的在地味道。</div></div>
+    </div>
+    <div class="rest-card">
+      <div class="rest-header"><div class="rest-icon">🌙</div><div class="rest-meta"><div class="rest-name">萩之月</div><div class="rest-tags"><span class="tag tag-local-f">仙台名物</span><span class="tag tag-main-food">D6/D7 S-PAL</span></div></div></div>
+      <div class="rest-body"><div class="rest-desc">仙台最知名伴手禮，S-PAL 地下採買。建議多買幾盒。</div></div>
+    </div>
+
+  </div><!-- /f-sweet -->
+
+  <!-- DHC -->
+  <div id="f-dhc" class="ftab">
+    <div style="background:var(--purple-bg);border-radius:var(--r);padding:16px 18px;margin-bottom:14px;border:1px solid rgba(96,64,192,0.15);">
+      <div style="font-size:0.85rem;font-weight:700;color:var(--purple);margin-bottom:10px;">💊 DHC 補貨任務（D6 · 仙台 S-PAL）</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+        <div style="background:rgba(96,64,192,0.1);border-radius:7px;padding:8px;text-align:center;font-size:0.78rem;color:var(--purple);font-weight:700;">Maca</div>
+        <div style="background:rgba(96,64,192,0.1);border-radius:7px;padding:8px;text-align:center;font-size:0.78rem;color:var(--purple);font-weight:700;">EPA</div>
+        <div style="background:rgba(96,64,192,0.1);border-radius:7px;padding:8px;text-align:center;font-size:0.78rem;color:var(--purple);font-weight:700;">肝臟精華</div>
+        <div style="background:rgba(96,64,192,0.1);border-radius:7px;padding:8px;text-align:center;font-size:0.78rem;color:var(--purple);font-weight:700;">鋅</div>
+        <div style="background:rgba(96,64,192,0.1);border-radius:7px;padding:8px;text-align:center;font-size:0.78rem;color:var(--purple);font-weight:700;">維他命 C</div>
+        <div style="background:rgba(96,64,192,0.1);border-radius:7px;padding:8px;text-align:center;font-size:0.78rem;color:var(--purple);font-weight:700;">葉酸</div>
+        <div style="background:rgba(96,64,192,0.1);border-radius:7px;padding:8px;text-align:center;font-size:0.78rem;color:var(--purple);font-weight:700;">葉黃素</div>
+      </div>
+    </div>
+  </div><!-- /f-dhc -->
+
+</div><!-- /food -->
+
+
+<!-- ══════ Section 5: 預算 ══════ -->
+<div id="budget" class="section">
+
+  <div class="food-nav-wrap">
+    <button class="food-tab active" onclick="showFoodTab('b-actual',this)">🔥 實際花費</button>
+    <button class="food-tab" onclick="showFoodTab('b-plan',this)">📋 規劃預算</button>
+  </div>
+
+  <!-- ══ 實際花費（結案版）══ -->
+  <div id="b-actual" class="ftab active">
+
+    <div style="background:var(--navy);border-radius:var(--r);padding:16px 18px;margin-bottom:16px;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem;color:var(--amber-light);font-family:'DM Mono',monospace;letter-spacing:0.08em;margin-bottom:4px;">全案總計支出</div>
+        <div style="font-size:1.5rem;font-weight:900;">NT$ 65,630</div>
+      </div>
+      <div style="font-size:0.76rem;color:rgba(255,255,255,0.7);line-height:1.6;text-align:right;">
+        台幣與日幣原帳完全各就各位<br>六大消費類別 · 已全數結清
+      </div>
+    </div>
+
+    <div class="budget-section">
+      <h3>🏢 住宿費用 <span class="exp-total">$8,808</span></h3>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>橫濱遠東鄉村酒店<div class="exp-note">2 晚住宿費用</div><span class="exp-card">聯邦幸福M卡</span></td><td>$3,344 TWD</td><td>3,344</td></tr>
+          <tr><td>秋田大飯店<div class="exp-note">Booking 訂房 2 晚住宿</div><span class="exp-card">永豐幣倍卡</span></td><td>$3,261 TWD</td><td>3,261</td></tr>
+          <tr><td>KOKO HOTEL 仙台<div class="exp-note">2 晚住宿費用（實際入住館別，原規劃為相鐵 FRESA INN）</div><span class="exp-card">西瓜卡 Suica</span></td><td>¥11,016 JPY</td><td>2,203</td></tr>
+          <tr class="sub"><td>小計</td><td>—</td><td>8,808</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="budget-section">
+      <h3>🚗 交通 <span class="exp-total">$23,714</span></h3>
+
+      <div style="font-size:0.76rem;font-weight:700;color:var(--blue);margin:2px 0 8px;">✈️ 機票</div>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>星宇航空 來回機票<div class="exp-note">桃園➔成田 / 成田➔台中（雙點進出）</div><span class="exp-card">獨立刷卡管道</span></td><td>$9,944 TWD</td><td>9,944</td></tr>
+          <tr class="sub"><td>機票 小計</td><td>—</td><td>9,944</td></tr>
+        </tbody>
+      </table>
+
+      <div style="font-size:0.76rem;font-weight:700;color:var(--blue);margin:14px 0 8px;">🚕 計程車</div>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>國內外 4 筆 UBER 與計程車<div class="exp-note">台中機場($591)、家裡($177)、岩沼($329)、金蛇水($329)</div><span class="exp-card">幸福M卡 / 全盈郵局</span></td><td>$1,426 TWD</td><td>1,426</td></tr>
+          <tr class="sub"><td>計程車 小計</td><td>—</td><td>1,426</td></tr>
+        </tbody>
+      </table>
+
+      <div style="font-size:0.76rem;font-weight:700;color:var(--blue);margin:14px 0 8px;">🚄 鐵路</div>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>東日本周遊券（JR East Pass）<div class="exp-note">5 日券固定扣款（手冊載明 ¥35,000）</div><span class="exp-card">永豐大戶卡</span></td><td>$6,900 TWD</td><td>6,900</td></tr>
+          <tr><td>Klook 成田 Skyliner 特急券<div class="exp-note">機場往返市區特急車票</div><span class="exp-card">聯邦幸福M卡</span></td><td>$410 TWD</td><td>410</td></tr>
+          <tr class="sub"><td>鐵路 小計</td><td>—</td><td>7,310</td></tr>
+        </tbody>
+      </table>
+
+      <div style="font-size:0.76rem;font-weight:700;color:var(--blue);margin:14px 0 8px;">🚗 自駕租車</div>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>NISSAN 租車費<div class="exp-note">秋田自駕 2 日租車規費</div><span class="exp-card">永豐幣倍卡</span></td><td>$3,391 TWD</td><td>3,391</td></tr>
+          <tr><td>apollo 租車加油費<div class="exp-note">自駕沿途油資補給</div><span class="exp-card">全支付（將來直扣）</span></td><td>$510 TWD</td><td>510</td></tr>
+          <tr class="sub"><td>自駕租車 小計</td><td>—</td><td>3,901</td></tr>
+        </tbody>
+      </table>
+
+      <div style="font-size:0.76rem;font-weight:700;color:var(--blue);margin:14px 0 8px;">🚌 接駁與大眾運輸</div>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>統聯客運（機場接駁）<div class="exp-note">去程國內機場接駁</div><span class="exp-card">聯邦幸福M卡</span></td><td>$290 TWD</td><td>290</td></tr>
+          <tr><td>在地地鐵捷運路段<div class="exp-note">包含仙台地下鐵($121)、橫濱藍線($41)</div><span class="exp-card">聯邦吉鶴卡</span></td><td>$162 TWD</td><td>162</td></tr>
+          <tr><td>其餘大眾運輸與公車扣款<div class="exp-note">日本在地公車、機動短程鐵路</div><span class="exp-card">西瓜卡 Suica</span></td><td>¥3,406 JPY</td><td>681</td></tr>
+          <tr class="sub"><td>接駁與大眾運輸 小計</td><td>—</td><td>1,133</td></tr>
+        </tbody>
+      </table>
+
+      <table class="budget-table" style="margin-top:10px;">
+        <tbody>
+          <tr class="total"><td>🚗 交通大項 總計</td><td>—</td><td>23,714</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="budget-section">
+      <h3>🛍️ 購物美妝 <span class="exp-total">$14,104</span></h3>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>大國藥妝（保健食品）<div class="exp-note">海外保健食品計畫性補貨大宗</div><span class="exp-card">幣倍卡 / 國泰全盈</span></td><td>$5,816 TWD</td><td>5,816</td></tr>
+          <tr><td>Uniqlo 服飾採購<div class="exp-note">防風保暖外套($1,455)＋圓領短袖($1,090)</div><span class="exp-card">全盈+PAY（郵局）</span></td><td>$2,545 TWD</td><td>2,545</td></tr>
+          <tr><td>ABC-MART 鞋履<div class="exp-note">在地鞋履與衣著補給</div><span class="exp-card">全盈+PAY（國泰）</span></td><td>$1,000 TWD</td><td>1,000</td></tr>
+          <tr><td>Owndays 實體配鏡<div class="exp-note">日本在地配鏡（手冊載明 ¥3,300）</div><span class="exp-card">永豐SPORT卡</span></td><td>$654 TWD</td><td>654</td></tr>
+          <tr><td>日常生活物資與書籍雜項<div class="exp-note">包含無印良品、大創百貨、丸善書籍、全家襪子</div><span class="exp-card">郵局全盈 / 國泰全盈</span></td><td>$3,217 TWD</td><td>3,217</td></tr>
+          <tr><td>男鹿水族館紀念品周邊<div class="exp-note">園區北極熊限定紀念品</div><span class="exp-card">西瓜卡 Suica</span></td><td>¥4,360 JPY</td><td>872</td></tr>
+          <tr class="sub"><td>小計</td><td>—</td><td>14,104</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="budget-section">
+      <h3>🍔 餐飲費用 <span class="exp-total">$10,374</span></h3>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>地方精選正餐與名物小吃<div class="exp-note">割烹そば($1,121)、善治郎牛舌($808)、比內や親子丼($400)等</div><span class="exp-card">郵局全盈 / 幣倍卡</span></td><td>$5,123 TWD</td><td>5,123</td></tr>
+          <tr><td>伴手點心與超商宵夜補給<div class="exp-note">菓匠三全($808)、一蘭($276)、若廣鯖魚壽司($367)及每日超商</div><span class="exp-card">國泰全盈 / 全支付</span></td><td>$4,585 TWD</td><td>4,585</td></tr>
+          <tr><td>園區餐廳及在地機動點心<div class="exp-note">八木山森之餐廳、男鹿霜淇淋、新幹線販賣機補水</div><span class="exp-card">現金 / 西瓜卡</span></td><td>¥3,333 JPY</td><td>666</td></tr>
+          <tr class="sub"><td>小計</td><td>—</td><td>10,374</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="budget-section">
+      <h3>🎟️ 旅遊行程 <span class="exp-total">$7,330</span></h3>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>神社限定信仰與園區扭蛋<div class="exp-note">金蛇水御守(¥6,305)、男鹿扭蛋(¥4,500)、伊勢山(¥2,505)、三吉(¥1,010)</div><span class="exp-card">日幣現金 JPY</span></td><td>¥15,330 JPY</td><td>3,066</td></tr>
+          <tr><td>園區自駕合作停車費<div class="exp-note">Metro-Tópico 合作停車規費</div><span class="exp-card">日幣現金 JPY</span></td><td>¥1,000 JPY</td><td>200</td></tr>
+          <tr><td>西瓜卡扣款門票與特定周邊<div class="exp-note">八木山紀念品(¥4,210)、男鹿門票(¥3,000)、橫濱門票(¥800)</div><span class="exp-card">西瓜卡 Suica</span></td><td>¥7,000 JPY</td><td>1,400</td></tr>
+          <tr><td>台幣預訂門票與景點雜項<div class="exp-note">Klook 八景島($619)、八木山($754)、上野入場置物等</div><span class="exp-card">幸福M卡 / 幣倍卡</span></td><td>$2,664 TWD</td><td>2,664</td></tr>
+          <tr class="sub"><td>小計</td><td>—</td><td>7,330</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="budget-section">
+      <h3>🌐 網卡費用 <span class="exp-total">$1,300</span></h3>
+      <table class="budget-table">
+        <thead><tr><th>項目</th><th>原始憑證金額</th><th>TWD</th></tr></thead>
+        <tbody>
+          <tr><td>DJB 暢日卡 ULTRA<div class="exp-note">主力高規格上網卡</div><span class="exp-card">永豐SPORT卡</span></td><td>$865 TWD</td><td>865</td></tr>
+          <tr><td>7-11 酷遊卡實體卡<div class="exp-note">備用實體網卡</div><span class="exp-card">日常開銷帳戶</span></td><td>$435 TWD</td><td>435</td></tr>
+          <tr class="sub"><td>小計</td><td>—</td><td>1,300</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="budget-section">
+      <h3>💰 總計（實際 vs. 規劃）</h3>
+      <table class="budget-table">
+        <thead><tr><th>分類</th><th>TWD</th><th>佔比</th></tr></thead>
+        <tbody>
+          <tr><td>1. 交通（機票＋計程車＋其餘交通）</td><td>23,714</td><td>36.1%</td></tr>
+          <tr><td>2. 住宿費用</td><td>8,808</td><td>13.4%</td></tr>
+          <tr><td>3. 購物美妝</td><td>14,104</td><td>21.5%</td></tr>
+          <tr><td>4. 餐飲費用</td><td>10,374</td><td>15.8%</td></tr>
+          <tr><td>5. 旅遊行程</td><td>7,330</td><td>11.2%</td></tr>
+          <tr><td>6. 網卡費用</td><td>1,300</td><td>2.0%</td></tr>
+          <tr class="total"><td>全案總計支出</td><td>65,630</td><td>100%</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:0.78rem;color:var(--text2);margin-top:8px;line-height:1.6;">
+        ※ 規劃預算原估 48,780+ TWD，實際結案 65,630 TWD，超出約 16,850 TWD（+35%）。主要落差來自「交通 - 其餘交通」（JR Pass 實付較估算高）與「購物美妝」（藥妝／Uniqlo／配鏡屬計畫外加購項目）。日幣項目已依各筆原始憑證匯率折算，非統一 0.2 概算。
+      </div>
+    </div>
+
+  </div><!-- /b-actual -->
+
+  <!-- ══ 規劃預算（出發前估算，保留備查）══ -->
+  <div id="b-plan" class="ftab">
+  <div class="exrate">匯率基準：1 JPY ≈ 0.2 TWD</div>
+
+  <div class="budget-section">
+    <h3>✈️ 交通預算</h3>
+    <table class="budget-table">
+      <thead><tr><th>項目</th><th>JPY</th><th>TWD</th></tr></thead>
+      <tbody>
+        <tr><td>星宇 JX800（去程）台北→成田</td><td>—</td><td>5,587</td></tr>
+        <tr><td>星宇 JX315（回程）成田→台中</td><td>—</td><td>4,357</td></tr>
+        <tr><td>JR East Pass 5日券</td><td>35,000</td><td>7,000</td></tr>
+        <tr><td>成田 Skyliner（單程）</td><td>2,570</td><td>514</td></tr>
+        <tr><td>金澤海岸線（D2 八景島，非 JR）</td><td>700</td><td>140</td></tr>
+        <tr><td>市巴 50 路 往返（D3 Zoorasia，現金）</td><td>500</td><td>100</td></tr>
+        <tr><td>仙台地下鐵東西線（D6 八木山）</td><td>370</td><td>74</td></tr>
+        <tr><td>🚗 自駕租車（D4–D5，2日）</td><td>17,248</td><td>3,450</td></tr>
+        <tr><td>🚗 停車費（秋田大飯店，2日）</td><td>2,000</td><td>400</td></tr>
+        <tr><td>🚗 高速公路 / 加油費</td><td>4,000</td><td>800</td></tr>
+        <tr><td>市內移動雜項（計程車等）</td><td>2,000</td><td>400</td></tr>
+        <tr class="sub"><td>小計</td><td>64,388</td><td>22,821</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="budget-section">
+    <h3>🏨 住宿預算（6 晚）</h3>
+    <table class="budget-table">
+      <thead><tr><th>飯店</th><th>晚數</th><th>TWD</th></tr></thead>
+      <tbody>
+        <tr><td>橫濱遠東致遠酒店</td><td>2 晚</td><td>3,391</td></tr>
+        <tr><td>秋田大飯店（ANA CP）</td><td>2 晚</td><td>3,223</td></tr>
+        <tr><td>相鐵 FRESA INN 仙台</td><td>2 晚</td><td>2,569</td></tr>
+        <tr class="sub"><td>小計</td><td>6 晚</td><td>9,183</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="budget-section">
+    <h3>🍱 餐飲預算</h3>
+    <table class="budget-table">
+      <thead><tr><th>項目</th><th>JPY</th><th>TWD</th></tr></thead>
+      <tbody>
+        <tr><td>任務餐廳（極味屋/牛舌/拉麵等）</td><td>15,000</td><td>3,000</td></tr>
+        <tr><td>每日伙食 / 超商 / 便當</td><td>18,000</td><td>3,600</td></tr>
+        <tr><td>飲水 / 咖啡 / 甜點雜項</td><td>5,000</td><td>1,000</td></tr>
+        <tr class="sub"><td>小計</td><td>38,000</td><td>7,600</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="budget-section">
+    <h3>🎫 門票</h3>
+    <table class="budget-table">
+      <thead><tr><th>場館</th><th>JPY</th><th>TWD</th></tr></thead>
+      <tbody>
+        <tr><td>上野動物園</td><td>600</td><td>120</td></tr>
+        <tr><td>八景島（アクアリゾーツパス）</td><td>3,300</td><td>660</td></tr>
+        <tr><td>Zoorasia 橫濱動物園</td><td>800</td><td>160</td></tr>
+        <tr><td>男鹿水族館 GAO（2日分）</td><td>2,200</td><td>440</td></tr>
+        <tr><td>八木山動物公園</td><td>480</td><td>96</td></tr>
+        <tr class="sub"><td>小計</td><td>7,380</td><td>1,476</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="budget-section">
+    <h3>🛍️ 特定採購任務</h3>
+    <table class="budget-table">
+      <thead><tr><th>項目</th><th>JPY</th><th>TWD</th></tr></thead>
+      <tbody>
+        <tr><td>DHC 補貨任務</td><td>12,000</td><td>2,400</td></tr>
+        <tr><td>伴手禮（萩之月 / 稻庭烏龍 / いぶりがっこ）</td><td>7,500</td><td>1,500</td></tr>
+        <tr class="sub"><td>小計</td><td>19,500</td><td>3,900</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="budget-section">
+    <h3>💰 總計</h3>
+    <table class="budget-table">
+      <thead><tr><th>分類</th><th>TWD</th><th>佔比</th></tr></thead>
+      <tbody>
+        <tr><td>1. 交通（含自駕）</td><td>22,821</td><td>47%</td></tr>
+        <tr><td>2. 住宿</td><td>9,183</td><td>19%</td></tr>
+        <tr><td>3. 餐飲</td><td>7,600</td><td>16%</td></tr>
+        <tr><td>4. 門票（GAO 2日含）</td><td>1,476</td><td>3%</td></tr>
+        <tr><td>5. 採購</td><td>3,900</td><td>8%</td></tr>
+        <tr><td>6. 緩衝備用金</td><td>3,800</td><td>8%</td></tr>
+        <tr class="total"><td>全案總預計支出</td><td>48,780~</td><td>100%</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:0.78rem;color:var(--text2);margin-top:8px;line-height:1.6;">
+      ※ 匯率基準 1 JPY = 0.2 TWD。租車費用 17,248 JPY（含保險）。建議 Suica 預存 20,000 JPY，自駕現金備 25,000 JPY（租車尾款 + 加油 + 高速）。
+    </div>
+  </div>
+
+  </div><!-- /b-plan -->
+
+</div><!-- /budget -->
+
+
+<!-- ══════ Section 6: SOP ══════ -->
+<div id="sop" class="section">
+
+  <div class="sop-card">
+    <h3>🔴 必辦 / 緊急事項</h3>
+    <div class="sop-item"><div class="sop-key">D3 早</div><div class="sop-val"><strong>JR East Pass 啟用</strong>（5 日券 6/20–6/24）：小町 41 號全車指定席需同步劃位。市巴 50 路非 JR，現金支付。</div></div>
+    <div class="sop-item"><div class="sop-key">D3 車票</div><div class="sop-val"><strong style="color:var(--danger)">小町 41 號保底末班車：</strong>小町 45 號 東京 20:16 → 秋田 23:53。兩車皆需提前劃位。</div></div>
+    <div class="sop-item"><div class="sop-key">D4 自駕</div><div class="sop-val">11:00 取車（12:00 前牽車皆安全）。停車：秋田大飯店合作車位 ¥1,000/日。国際駕照確認攜帶。</div></div>
+    <div class="sop-item"><div class="sop-key">D5 還車</div><div class="sop-val"><strong>推薦看到 16:00 熊下班 → 還車 → 小町 48 號 18:16。</strong><br>還車最晚 <strong>19:00</strong>。末班保底：小町 96 號 21:03（19:00 前完成還車）。</div></div>
+    <div class="sop-item"><div class="sop-key">D7 N'EX</div><div class="sop-val">搭 09:34 隼號 10 接 13:03 N'EX（東京站緩衝 119 分）。新幹線→N'EX 月台步行 20–25 分鐘。</div></div>
+  </div>
+
+  <div class="sop-card">
+    <h3>🐻 看熊節奏管理</h3>
+    <div class="sop-item"><div class="sop-key">D1 上野</div><div class="sop-val">14:00 前出關 → 衝上野 · 若 14:00 後才出關 → 放棄上野直接橫濱</div></div>
+    <div class="sop-item"><div class="sop-key">D2 八景島</div><div class="sop-val">全天觀察雪丸 · <strong>16:30 起程返回</strong>（趕伊勢山 19:00 閉門）</div></div>
+    <div class="sop-item"><div class="sop-key">D3 Zoorasia</div><div class="sop-val">看上班放飯 · 09:30 開園 · <strong>13:30 撤退</strong>（趕 18:32 小町號）</div></div>
+    <div class="sop-item"><div class="sop-key">D4 GAO</div><div class="sop-val">看下班後場 · 自駕彈性 · 下午進館 · 16:30 自駕 → 鵜ノ崎 → 返秋田</div></div>
+    <div class="sop-item"><div class="sop-key">D5 GAO</div><div class="sop-val">上班＋下班 · 09:00 開館 · 11:00–13:30 強制午休 · <strong>16:00 自駕返秋田還車</strong></div></div>
+    <div class="sop-item"><div class="sop-key">D6 八木山</div><div class="sop-val">09:30 入園 · <strong>14:15 現場決策死線</strong>（去/不去金蛇水）· 保留體能吃田所商店</div></div>
+  </div>
+
+  <div class="sop-card">
+    <h3>🚗 自駕 SOP（D4–D5）</h3>
+    <div class="sop-item"><div class="sop-key">取車</div><div class="sop-val">D4 11:00（彈性至 12:00）。確認国際駕照 + 台灣駕照 + 護照。車型確認，手排 / 自排。</div></div>
+    <div class="sop-item"><div class="sop-key">路線</div><div class="sop-val">秋田市 → 男鹿半島（約 70 分）。雲昌寺（D4）→ GAO → 鵜ノ崎海岸 → 返秋田。</div></div>
+    <div class="sop-item"><div class="sop-key">停車</div><div class="sop-val">秋田大飯店合作車位 ¥1,000/日。GAO 停車場免費（含入館）。</div></div>
+    <div class="sop-item"><div class="sop-key">還車</div><div class="sop-val">D5 看完熊後 16:00 出發。<strong>最晚 19:00 完成還車</strong>（趕末班車），推薦 17:30–18:00 前還完。</div></div>
+    <div class="sop-item"><div class="sop-key">導航</div><div class="sop-val">Google Maps + 租車公司車載導航雙保險。男鹿水族館 GAO 郵便番号：〒010-0511。</div></div>
+  </div>
+
+  <div class="sop-card">
+    <h3>🎒 行李策略</h3>
+    <div class="sop-item"><div class="sop-key">D3 早上</div><div class="sop-val">大行李箱寄放橫濱飯店，輕裝前往 Zoorasia</div></div>
+    <div class="sop-item"><div class="sop-key">D3 傍晚</div><div class="sop-val">回飯店取行李 → 直赴東京站搭小町號</div></div>
+    <div class="sop-item"><div class="sop-key">備案</div><div class="sop-val">若行李過重，D3 早上以宅急便寄至仙台相鐵 FRESA INN</div></div>
+  </div>
+
+  <div class="sop-card">
+    <h3>💳 支付設定</h3>
+    <div class="sop-item"><div class="sop-key">Suica</div><div class="sop-val">iPhone Apple Pay Suica，出發前預存 20,000 JPY，隨時保持 5,000 JPY 以上</div></div>
+    <div class="sop-item"><div class="sop-key">自駕現金</div><div class="sop-val">備 20,000 JPY 現金（加油、停車、高速費用）</div></div>
+    <div class="sop-item"><div class="sop-key">市巴現金</div><div class="sop-val">市巴 50 路（D3 Zoorasia），準備現金零錢</div></div>
+    <div class="sop-item"><div class="sop-key">計程車</div><div class="sop-val">仙台地區使用「GO」App 叫車（D6 金蛇水）</div></div>
+  </div>
+
+  <div class="sop-card">
+    <h3>🗓️ JR East Pass 使用明細（5 日券 6/20–6/24）</h3>
+    <table class="transit-table" style="font-size:0.8rem">
+      <tr><td><span class="tag tag-pass">Pass 第1日</span><br><span style="font-size:0.72rem;color:var(--gray)">6/20（行程 D3）</span></td><td>小町號 41（東京→秋田）<br><span style="font-size:0.72rem;color:var(--gray)">※ 市巴 50 路、金澤海岸線非 JR，需另購票</span></td></tr>
+      <tr><td><span class="tag tag-pass">Pass 第2日</span><br><span style="font-size:0.72rem;color:var(--gray)">6/21（行程 D4）</span></td><td>自駕日，Pass 備用</td></tr>
+      <tr><td><span class="tag tag-pass">Pass 第3日</span><br><span style="font-size:0.72rem;color:var(--gray)">6/22（行程 D5）</span></td><td>小町號 48 或 96（秋田→仙台）</td></tr>
+      <tr><td><span class="tag tag-pass">Pass 第4日</span><br><span style="font-size:0.72rem;color:var(--gray)">6/23（行程 D6）</span></td><td>（選配）東北本線 仙台→岩沼<br><span style="font-size:0.72rem;color:var(--gray)">※ 仙台地下鐵東西線非 JR，需另購票（約 370 JPY）</span></td></tr>
+      <tr><td><span class="tag tag-pass">Pass 第5日</span><br><span style="font-size:0.72rem;color:var(--gray)">6/24（行程 D7）</span></td><td>隼號 10（仙台→東京）、N'EX 27（東京→成田）</td></tr>
+    </table>
+  </div>
+
+</div><!-- /sop -->
+
+<script>
+function showSec(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function showFoodTab(id, btn) {
+  document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.food-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
